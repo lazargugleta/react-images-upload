@@ -98,7 +98,6 @@ class ReactImageUploadComponent extends React.Component {
       allFilePromises.push(this.readFile(file));
     }
 
-
     this.setState({
       fileErrors,
     });
@@ -298,6 +297,7 @@ ReactImageUploadComponent.defaultProps = {
   errorClass: "",
   style: {},
   errorStyle: {},
+  maxFileCount: 5,
   singleImage: false,
   onChange: () => {},
   defaultImages: [],
@@ -328,6 +328,7 @@ ReactImageUploadComponent.propTypes = {
   errorClass: PropTypes.string,
   errorStyle: PropTypes.object,
   singleImage: PropTypes.bool,
+  maxFileCount: PropTypes.number,
   defaultImages: PropTypes.array,
 };
 
