@@ -60,14 +60,18 @@ class ReactImageUploadComponent extends React.Component {
    Handle file validation
    */
   onDropFile(e) {
+    console.log("spongebob", this.props.maxFileCount);
     const files = e.target.files;
     const allFilePromises = [];
     const fileErrors = [];
+    //let trt = false;
 
     // Iterate over all uploaded files
     for (let i = 0; i < files.length; i++) {
       if (i < this.props.maxFileCount) {
-        break;
+        console.log("patrick star", this.props.maxFileCount);
+        return;
+        // break;
       }
 
       let file = files[i];
@@ -93,6 +97,7 @@ class ReactImageUploadComponent extends React.Component {
 
       allFilePromises.push(this.readFile(file));
     }
+
 
     this.setState({
       fileErrors,

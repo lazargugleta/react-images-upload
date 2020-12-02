@@ -108,14 +108,18 @@ var ReactImageUploadComponent = function (_React$Component) {
     value: function onDropFile(e) {
       var _this2 = this;
 
+      console.log("spongebob", this.props.maxFileCount);
       var files = e.target.files;
       var allFilePromises = [];
       var fileErrors = [];
+      //let trt = false;
 
       // Iterate over all uploaded files
       for (var i = 0; i < files.length; i++) {
         if (i < this.props.maxFileCount) {
-          break;
+          console.log("patrick star", this.props.maxFileCount);
+          return;
+          // break;
         }
 
         var file = files[i];
